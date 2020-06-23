@@ -1,0 +1,4 @@
+1. Adding MapView and Configuration is  Scrolling, Building, Point of Interest and UserLocation are Enabled.
+2. extension for MapVC implements CLLocationManager and we have to add Privacy permissions
+    Privacy - Location Always Usage Description
+    Privacy - Location When In Use Usage Description
