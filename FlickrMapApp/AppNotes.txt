@@ -2,3 +2,11 @@
 2. extension for MapVC implements CLLocationManager and we have to add Privacy permissions
     Privacy - Location Always Usage Description
     Privacy - Location When In Use Usage Description
+3. CLLocationManagerDelegate, MKMapViewDelegate as Extension for MapVC and implements mapView.delegate = self, locationManager.delegate = self
+4. Authorization Check in CLLocationManagerDelegate
+5. centerMapOnUserLocation() in MKMapViewDelegate and setRegion()
+6. Implement dropPin() with coordinates and identifier, we redesign the pin with identifier in  viewFor mapView
+7. addDoubleTap() gesture Recognizer two tap and drop pin
+8. centerMapButtonPressed() relocate the map view centeralized of pin
+9. removePin() for previous pins
+10. pullUpView Height Constraint view Up --> 300, view Down --> 0

@@ -16,7 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gik-Zh-HID">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="856"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="849"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="849" id="moU-zX-j4N"/>
+                                </constraints>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RBL-gd-IaW">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
@@ -42,8 +45,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41H-1S-kLj">
                                 <rect key="frame" x="344" y="806" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="S6H-jJ-pkr"/>
-                                    <constraint firstAttribute="width" constant="50" id="bzP-pr-EUq"/>
+                                    <constraint firstAttribute="width" constant="50" id="cZu-ve-L7z"/>
+                                    <constraint firstAttribute="height" constant="50" id="h5G-pS-ZsT"/>
                                 </constraints>
                                 <state key="normal" image="locationButton"/>
                                 <connections>
@@ -51,30 +54,35 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ENv-qC-Fmp">
-                                <rect key="frame" x="0.0" y="856" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="893" width="414" height="3"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="yjT-UR-M5t"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="ENv-qC-Fmp" secondAttribute="bottom" constant="-34" id="2ze-Pp-moi"/>
-                            <constraint firstItem="Gik-Zh-HID" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="90y-Vh-foO"/>
+                            <constraint firstItem="ENv-qC-Fmp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1fv-9F-MUS"/>
+                            <constraint firstItem="ENv-qC-Fmp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="35r-se-eod"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="41H-1S-kLj" secondAttribute="trailing" constant="20" id="5Sb-6j-cCd"/>
                             <constraint firstItem="RBL-gd-IaW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="CjM-nB-xmh"/>
-                            <constraint firstItem="Gik-Zh-HID" firstAttribute="leading" secondItem="ENv-qC-Fmp" secondAttribute="leading" id="E5v-Ae-nOn"/>
-                            <constraint firstItem="Gik-Zh-HID" firstAttribute="trailing" secondItem="ENv-qC-Fmp" secondAttribute="trailing" id="Rv8-B1-oOP"/>
-                            <constraint firstItem="ENv-qC-Fmp" firstAttribute="top" secondItem="Gik-Zh-HID" secondAttribute="bottom" id="Z6a-TG-8HA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gik-Zh-HID" secondAttribute="bottom" constant="6" id="amG-YW-pES"/>
-                            <constraint firstItem="Gik-Zh-HID" firstAttribute="bottom" secondItem="41H-1S-kLj" secondAttribute="bottom" id="gow-aG-qfB"/>
-                            <constraint firstItem="Gik-Zh-HID" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oS1-90-73W"/>
+                            <constraint firstItem="Gik-Zh-HID" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KLc-45-qhy"/>
+                            <constraint firstItem="Gik-Zh-HID" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lrg-Cy-pd8"/>
+                            <constraint firstItem="ENv-qC-Fmp" firstAttribute="top" secondItem="Gik-Zh-HID" secondAttribute="bottom" id="hCX-HN-yYD"/>
+                            <constraint firstItem="41H-1S-kLj" firstAttribute="bottom" secondItem="Gik-Zh-HID" secondAttribute="bottom" constant="-37" id="izs-ry-y0O"/>
+                            <constraint firstItem="ENv-qC-Fmp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="j9a-Z5-aQs"/>
+                            <constraint firstItem="Gik-Zh-HID" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oGH-NG-rjT"/>
                             <constraint firstItem="RBL-gd-IaW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qmA-9f-bVV"/>
                             <constraint firstItem="RBL-gd-IaW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="r08-Bn-uoE"/>
-                            <constraint firstItem="Gik-Zh-HID" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="wa2-qt-WZq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="41H-1S-kLj" secondAttribute="trailing" constant="20" id="zVw-7P-Y7H"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="Gik-Zh-HID" id="eLd-7d-nRD"/>
+                        <outlet property="mapViewBottomConstraint" destination="hCX-HN-yYD" id="QWE-RJ-2mN"/>
+                        <outlet property="pullUpView" destination="ENv-qC-Fmp" id="uPs-I1-mf5"/>
+                        <outlet property="pullUpViewHeightConstraint" destination="yjT-UR-M5t" id="HGP-lr-l4l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
