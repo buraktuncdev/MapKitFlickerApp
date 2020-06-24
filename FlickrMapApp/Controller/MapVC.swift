@@ -10,7 +10,22 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapVC: UIViewController{
+class MapVC: UIViewController, UIGestureRecognizerDelegate{
+    
+    // Customize Pin
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        // We need Our Location is default
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        // Double Tap Pinner Design
+        let pinAnnotation = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "droppablePin")
+        pinAnnotation.pinTintColor = #colorLiteral(red: 0.9771530032, green: 0.7062081099, blue: 0.1748393774, alpha: 1)
+        pinAnnotation.animatesDrop = true
+        return pinAnnotation
+    }
 
     // Outlets
     @IBOutlet weak var mapView: MKMapView!
@@ -18,14 +33,47 @@ class MapVC: UIViewController{
     // Variables
     var locationManager = CLLocationManager()                            // location manager variable
     let authorizationStatus = CLLocationManager.authorizationStatus()    // Authorization status for CLLocation Services
-    let regionRadius: Double = 1000                                   // 1000 meters for region
+    let regionRadius: Double = 1000                                     // 1000 meters for region
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
         locationManager.delegate = self
         configureLocationServices()
+        addDoubleTap()
     }
+    
+    // Douple Tap Gesture Recognizer for the Point as X,Y
+    func addDoubleTap() {
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(dropPin(sender:)))
+        doubleTap.numberOfTapsRequired = 2 // count of taps
+        doubleTap.delegate = self          // UIGestureRecognizerDelegate
+        mapView.addGestureRecognizer(doubleTap)
+    }
+    
+    // UIGestureRecognizer sender implements because we need to catch and convert(to GPS) that coordinates of double tap point
+    @objc func dropPin(sender: UIGestureRecognizer) {
+        removePin()
+        let touchPoint = sender.location(in: mapView)                                // touch point X,Y
+        let touchCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView) // Converting to GPS coordinates
+        
+        print(touchCoordinate)
+        
+        // Add Pin to MapView
+        let annotation = DroppablePin(coordinate: touchCoordinate, identifier: "droppablePin")
+        mapView.addAnnotation(annotation)
+        
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(touchCoordinate, regionRadius * 2.0, regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: true)
+        
+    }
+    
+    func removePin() {
+        for annotation in mapView.annotations {
+            mapView.removeAnnotation(annotation)
+        }
+    }
+    
     
     // Center Location
     @IBAction func centerMapButtonPressed(_ sender: Any) {

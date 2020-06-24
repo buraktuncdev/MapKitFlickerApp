@@ -14,6 +14,7 @@
 		2E92F13224A230820037FC13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E92F13124A230820037FC13 /* Assets.xcassets */; };
 		2E92F13524A230820037FC13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E92F13324A230820037FC13 /* LaunchScreen.storyboard */; };
 		2E92F14124A25A8D0037FC13 /* AppNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2E92F14024A25A8D0037FC13 /* AppNotes.txt */; };
+		2E92F14324A276B90037FC13 /* DroppablePin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92F14224A276B90037FC13 /* DroppablePin.swift */; };
 		EB1CAB6FA3A023C48AB92ACE /* Pods_FlickrMapApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60A3BB13CFD56AB14F06289 /* Pods_FlickrMapApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		2E92F13424A230820037FC13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E92F13624A230820037FC13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E92F14024A25A8D0037FC13 /* AppNotes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = AppNotes.txt; sourceTree = "<group>"; };
+		2E92F14224A276B90037FC13 /* DroppablePin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroppablePin.swift; sourceTree = "<group>"; };
 		7737DD788A03B08FE58B1931 /* Pods-FlickrMapApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrMapApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrMapApp/Pods-FlickrMapApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A60A3BB13CFD56AB14F06289 /* Pods_FlickrMapApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickrMapApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2AFE89D1E788F470827F0F /* Pods-FlickrMapApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrMapApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrMapApp/Pods-FlickrMapApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		2E92F13D24A230910037FC13 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2E92F14224A276B90037FC13 /* DroppablePin.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E92F12D24A230810037FC13 /* MapVC.swift in Sources */,
+				2E92F14324A276B90037FC13 /* DroppablePin.swift in Sources */,
 				2E92F12924A230810037FC13 /* AppDelegate.swift in Sources */,
 				2E92F12B24A230810037FC13 /* SceneDelegate.swift in Sources */,
 			);
