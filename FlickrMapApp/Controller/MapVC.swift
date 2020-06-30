@@ -51,6 +51,8 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate{
     
     var imageUrlArray = [String]()
     
+    var imageArray = [UIImage]()
+    
     
     
     
@@ -134,7 +136,18 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate{
         
         retrieveUrls(forAnnotation: annotation) { (success) in
             if success {
-                print(self.imageUrlArray)
+                self.retrieveImages { (finished) in
+                    if finished {
+                        // hide spinner
+                        // hide label
+                        // reload collectionView
+                        self.removeSpinner()
+                        self.removeProgressLabel()
+                        
+                    } else {
+                        
+                    }
+                }
             } else {
                 print("ERROR")
             }
@@ -171,6 +184,26 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate{
             handler(true)
         }
         
+    }
+    
+    
+    // already downloaded we need use the date
+    func retrieveImages(handler: @escaping(_ status: Bool)-> ()) {
+        imageArray = []
+        
+        for url in imageUrlArray {
+            Alamofire.request(url).responseImage { (response) in
+                guard let image = response.result.value else {return}
+                self.imageArray.append(image)
+                self.progressLabel?.text = "\(self.imageArray.count)/40 IMAGES DOWNLOADED"
+                
+                
+                if self.imageArray.count == self.imageUrlArray.count {
+                    handler(true)
+                }
+                
+            }
+        }
     }
     
     
