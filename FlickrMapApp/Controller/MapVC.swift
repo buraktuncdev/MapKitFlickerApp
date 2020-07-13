@@ -181,6 +181,8 @@ class MapVC: UIViewController, UIGestureRecognizerDelegate{
                 self.imageUrlArray.append(postUrl)
             }
             
+            
+            
             handler(true)
         }
         
